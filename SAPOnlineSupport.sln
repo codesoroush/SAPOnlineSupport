@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminDash", "AdminDash\Admi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientWidget", "ClientWidget\ClientWidget.csproj", "{B69F9363-B0C0-47CF-AEC5-DF0F0B5F7D18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAPChatHub", "SAPChatHub\SAPChatHub.csproj", "{A5F8FE94-55C9-437F-9E32-4AD48634F11F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SAPChatHub", "SAPChatHub\SAPChatHub.csproj", "{A5F8FE94-55C9-437F-9E32-4AD48634F11F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

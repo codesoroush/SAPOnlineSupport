@@ -28,8 +28,11 @@ namespace SAPChatHub
 
 
 
-            services.AddSignalR();
-            services.AddCors(o => o.AddPolicy("All", b => b.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowCredentials()));
+            services.AddSignalR( (sign) =>
+            {
+                sign.ClientTimeoutInterval = TimeSpan.FromSeconds(30);
+
+            });
 
             services.AddMvc();
         }
@@ -51,16 +54,21 @@ namespace SAPChatHub
             app.UseStaticFiles();
 
             app.UseRouting();
-            app.UseCors("All");
+            //app.UseCors("All");
 
             app.UseAuthorization();
-
+            app.UseCors(builder => builder
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .SetIsOriginAllowed(_ => true)
+            .AllowCredentials()
+        );
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
-                endpoints.MapHub<SAPOShub>("/hub");
+                endpoints.MapHub<SAPOShub>("v1/hub");
 
             });
         }
