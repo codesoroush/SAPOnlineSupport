@@ -8,10 +8,6 @@
     <ProjectReference Include="..\SAPOSService\SAPOSService.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\lib\sr\" />
-  </ItemGroup>
-
 
 
 </Project>

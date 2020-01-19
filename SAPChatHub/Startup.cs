@@ -54,7 +54,6 @@ namespace SAPChatHub
             app.UseStaticFiles();
 
             app.UseRouting();
-            //app.UseCors("All");
 
             app.UseAuthorization();
             app.UseCors(builder => builder
@@ -68,6 +67,7 @@ namespace SAPChatHub
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+             
                 endpoints.MapHub<SAPOShub>("v1/hub");
 
             });
