@@ -27,10 +27,11 @@
     connection.start()
         .then(function () {
             console.log('connection started');
+            CIDRegister(connection.connectionId)
             document.getElementById('sendmessage').addEventListener('click', function (event) {
                 // Call the Send method on the hub.
                 connection.invoke('send', name, messageInput.value);
-
+             
                 // Clear text box and reset focus for next comment.
                 messageInput.value = '';
                 messageInput.focus();

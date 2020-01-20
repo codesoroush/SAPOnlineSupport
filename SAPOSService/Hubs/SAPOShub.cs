@@ -16,6 +16,11 @@ namespace SAPOSService.Hubs
             // Call the broadcastMessage method to update clients.
             await Clients.All.SendAsync("broadcastMessage", name, message);
         }
+        public override Task OnConnectedAsync()
+        {
+
+            return base.OnConnectedAsync();
+        }
         public override Task OnDisconnectedAsync(Exception exception)
         {
             return base.OnDisconnectedAsync(exception);
